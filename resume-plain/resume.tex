@@ -1,10 +1,5 @@
-%-------------------------
-% Resume in Latex
-% Author : Sourabh Bajaj
-% License : MIT
-%------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -49,6 +44,14 @@
   }
 }
 
+
+\newcommand{\resumeBullet}[2]{
+  \item\small{
+    \textbf{#1}{#2 \vspace{-2pt}}
+  }
+}
+
+
 \newcommand{\resumeSubheading}[4]{
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
@@ -58,6 +61,9 @@
 }
 
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\newcommand{\resumeJobFunc}[2]{\resumeBullet{#1}{#2}\vspace{-0pt}}
+
 
 \renewcommand{\labelitemii}{$\circ$}
 
@@ -76,7 +82,7 @@
 %\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}l}
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
   \textbf{\href{http://srjit.github.io/}{\Large Sreejith Sreekumar}} & Email: \href{mailto:sreekumar.s@husky.neu.edu}{sreekumar.s@husky.neu.edu}\\
-  Portfolio: \href{http://srjit.github.io/}{http://srjit.github.io} & xmMobile: +1-857-399-6443 \\ 
+  Portfolio: \href{http://srjit.github.io/}{http://srjit.github.io} & Mobile: +1-857-399-6443 \\ 
   Linkedin: \href{https://www.linkedin.com/in/srjit/}{https://www.linkedin.com/in/srjit/} & Github: \href{http://github.com/srjit}{http://github.com/srjit} \\
 \end{tabular*}
 
@@ -92,83 +98,93 @@
       {Bachelor of Technology in Computer Science and Engineering}{Sep. 2007 -- Apr. 2011}
   \resumeSubHeadingListEnd
 
+%-----------SKILLS-----------------
+  \section{Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Specialities}
+      {Classification and Clustering, Regression, Deep Learning, Natural Language Processing \& Distributed Computing}
+    \resumeSubItem{Programming}
+      {Python, R, Scala, Shell Scripting, Java, Groovy, Javascript}
+    \resumeSubItem{ML Tools/Frameworks}
+      {Tensorflow, Keras, Scikit-Learn, Pandas}
+    \resumeSubItem{Big Data Ecosystem}
+    {Apache Spark and Spark Mllib, Apache Hadoop, Hive, Flume, Sqoop, Oozie}
+    \resumeSubItem{Databases}
+      {MySQL, MongoDB, HP Vertica}
+    \resumeSubItem{Certifications}
+      {Scalable Machine Learning(edX), Introduction to Big Data with Apache Spark (edX), Machine Learning (Coursera)}
+    
+      \resumeSubHeadingListEnd
+
+   %    -----------ACADEMIC PROJECTS-----------------
+
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Investigating Instances of Gun Violence using Pointer Networks}
+      {Proposed a novel model that employs Attention Mechanism in Sequence-to-Sequence learning and Pointer Neural Nets to extract the attributes of gun violence events from news reports.}
+    \resumeSubItem{Quantifying Semantic Similarity of Sentences using Long Short-Term Memory Networks}
+      {Designed and implemented a sequence-to-sequence model (LSTM network) for classifying semantically similar and dissimilar questions from Quora, carrying an accuracy of 83\% on validation after tuning.}
+    \resumeSubItem{Domain Specific Classification using AlexNet}
+      {Tuned the layers of a pre-trained AlexNet model for binary classification task on images that obtained an accuracy 94\% for the new task.}
+    \resumeSubItem{The Fake News Stance Classification}
+    {Achieved an accuracy of 88\% on classifying fake news from the genuine ones to four discrete levels - agree, discuss, disagree, and unrelated using handcrafted linguistic features along with distance features from vectorized fields(Word2Vec). Random Forests, Support Vector Machines, and XGBoost algorithms were used for performance comparison.}
+    \resumeSubItem{Home Value Prediction}
+    {Modeled Zillow's house rent prediction problem using Microsoft's LightGBM algorithm with a mean absolute error of 0.064.}
+
+  \resumeSubHeadingListEnd
+      
+  
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
-  \resumeSubHeadingListStart
+
+\resumeSubHeadingListStart
 
     \resumeSubheading
-      {Google}{Mountain View, CA}
-      {Software Engineer}{Oct 2016 - Present}
+      {Enterprise Risk - Analytics, Fidelity Investments}{Boston, US}
+      {Data Scientist (Co-Op)}{Jan 2017 - July 2017}
       \resumeItemListStart
-        \resumeItem{Tensorflow}
-          {TensorFlow is an open source software library for numerical computation using data flow graphs; primarily used for training deep learning models.}
-        \resumeItem{Apache Beam}
-          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines, as well as a set of language-specific SDKs for constructing pipelines and runners.}
+      \resumeJobFunc{}{Modeled the detection of anomalies in SOCKS proxy logs for suspicious network activity using Isolation Forest and Local Outlier Factor.}
+      \resumeJobFunc{}{Developed a framework for enhanced exploratory data analysis of SOCKS connection logs on PySpark}
       \resumeItemListEnd
-
+      \resumeSubHeadingListEnd
+      
+\resumeSubHeadingListStart      
     \resumeSubheading
-      {Coursera}{Mountain View, CA}
-      {Senior Software Engineer}{Jan 2014 - Oct 2016}
-      \resumeItemListStart
-        \resumeItem{Notifications}
-          {Service for sending email, push and in-app notifications. Involved in features such as delivery time optimization, tracking, queuing and A/B testing. Built an internal app to run batch campaigns for marketing etc.}
-        \resumeItem{Nostos}
-          {Bulk data processing and injection service from Hadoop to Cassandra and provides a thin REST layer on top for serving offline computed data online.}
-        \resumeItem{Workflows}
-          {Dataduct an open source workflow framework to create and manage data pipelines leveraging reusables patterns to expedite developer productivity.}
-        \resumeItem{Data Collection}
-          {Designed the internal survey and crowd sourcing platfowm which allowed for creating various tasks for crowd sourding or embedding surveys across the Coursera platform.}
-        \resumeItem{Dev Environment}
-          {Analytics environment based on docker and AWS, standardized the python and R dependencies. Wrote the core libraries that are shared by all data scientists.}
-        \resumeItem{Data Warehousing}
-          {Setup, schema design and management of Amazon Redshift. Built an internal app for access to the data using a web interface. Dataduct integration for daily ETL injection into Redshift.}
-        \resumeItem{Recommendations}
-          {Core service for all recommendation systems at Coursesa, currently used on the homepage and throughout the content discovery process. Worked on both offline training and online serving.}
-        \resumeItem{Content Discovery}
-          {Improved content discovery by building a new onboarding experience on coursera. Using this to personalize the search and browse experience. Also worked on ranking and indexing improvements.}
-        \resumeItem{Course Dashboards}
-          {Instructor dashboards and learner surveying tools, which helped instructors run their class better by providing data on Assignments and Learner Activity.}
-      \resumeItemListEnd
-
+      {Data Science Group, Innovation Labs, [24]7.ai Inc}{Bangalore, IN}
+      {Senior Data Engineer}{Jun 2016 - Dec2016}
+      \resumeItemListStart      
+      \resumeJobFunc{}{Modeled chat transcripts from customer conversations for user intent prediction for customer agent queue routing that achieved an accuracy of ~90\%.}
+      \resumeJobFunc{}{Designed and developed a Natural Language toolkit on PySpark for chat transcript data analysis and modeling.}
+      \resumeJobFunc{}{Configured the toolkit on a multi-cluster environment with three apache spark nodes for scalability.}
+      \resumeItemListEnd      
+    \resumeSubHeadingListEnd        
+      
+\resumeSubHeadingListStart
     \resumeSubheading
-      {Lucena Research}{Atlanta, GA}
-      {Data Scientist}{Summer 2012 and 2013}
-      \resumeItemListStart
-        \resumeItem{Portfolio Management}
-          {Created models for portfolio hedging,  portfolio optimization and price forecasting. Also creating a strategy backtesting engine used for simulating and backtesting strategies.}
-        \resumeItem{QuantDesk}
-          {Python backend for a web application used by hedge fund managers for portfolio management.}
-      \resumeItemListEnd
+      {Data Science Group, Innovation Labs, [24]7.ai Inc.}{Bangalore, IN}
+      {Data Engineer}{May 2015 - June 2016}
+      \resumeItemListStart            
+       \resumeJobFunc{}{Analyzed and modeled user data from web for several clients in the e-commerce domain for increasing chat propensity of potential customers with customer agents and uplifting purchases.}
+       \resumeJobFunc{}{Integrated SVM algorithm into the domain specific custom modeling tool and scaled over a million data points.}
+      \resumeItemListEnd             
+      \resumeSubHeadingListEnd        
 
+\resumeSubHeadingListStart      
     \resumeSubheading
-      {Georgia Institute of Technology}{Atlanta, GA}
-      {Research and Teaching Assistant}{Jan 2012 - Dec 2013}
-      \resumeItemListStart
-        \resumeItem{Research Assistant - Machine Learning}
-          {Research on machine learning for portfolio hedging and replication algorithms. Modeling low-risk \& continuous-return strategies. Developed the python library QSTK.}
-        \resumeItem{Teaching Assistant - Computational Investing}
-          {The online course on Coursera, had more than 100,000 students enrolled. It was featured on the 11 Alive News and the Atlanta Journal Constitution. Involved in creating assignment, exams and conducting recitation sessions. Also taught the on-campus version of the course.}
-      \resumeItemListEnd
+      {Xurmo Technologies Pvt. Ltd.}{Bangalore, IN}
+      {Software Engineer}{July 2011 - May 2015}
+      \resumeItemListStart            
+       \resumeJobFunc{}{Developed and maintained machine learning modules of the flagship product of the company - Xurmo big data analytics platform.}
+       \resumeJobFunc{}{Developed and integrated machine learning algorithms on Apache Spark (Java).}
+       \resumeJobFunc{}{Developed custom analytical functions as a platform functionality for data transformation.}
+       \resumeJobFunc{}{Programmed analytics applications using the Platform as a Service - Text exploration engine, Stock market movement prediction, Sentiment analyzer, Customer churn prediction.}
+      \resumeItemListEnd             
+      \resumeSubHeadingListEnd        
 
-  \resumeSubHeadingListEnd
-
-
-%-----------PROJECTS-----------------
-\section{Projects}
-  \resumeSubHeadingListStart
-    \resumeSubItem{QuantSoftware Toolkit}
-      {Open source python library for financial data analysis and machine learning for finance.}
-    \resumeSubItem{Github Visualization}
-      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-    \resumeSubItem{Recommendation System}
-      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-    \resumeSubItem{Mac Setup}
-      {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-  \resumeSubHeadingListEnd
 
 %
-%--------PROGRAMMING SKILLS------------
+%      --------PROGRAMMING SKILLS------------
 %\section{Programming Skills}
 %  \resumeSubHeadingListStart
 %    \item{
